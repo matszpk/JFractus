@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gradient>
+  <point>
+    <position>0.00000</position>
+    <rgbcolor>0.00392157 0.00392157 0.00392157</rgbcolor>
+  </point>
+  <point>
+    <position>0.00627615</position>
+    <rgbcolor>0.0627451 0.721569 0.796078</rgbcolor>
+  </point>
+  <point>
+    <position>0.0899582</position>
+    <rgbcolor>0.0666667 0.513726 0.737255</rgbcolor>
+  </point>
+  <point>
+    <position>0.175732</position>
+    <rgbcolor>0.133333 0.784314 0.819608</rgbcolor>
+  </point>
+  <point>
+    <position>0.209205</position>
+    <rgbcolor>0.0274510 0.890196 0.858824</rgbcolor>
+  </point>
+  <point>
+    <position>0.338912</position>
+    <rgbcolor>0.00000 1.00000 0.0352941</rgbcolor>
+  </point>
+  <point>
+    <position>0.443515</position>
+    <rgbcolor>0.0666667 0.772549 0.00392157</rgbcolor>
+  </point>
+  <point>
+    <position>0.483264</position>
+    <rgbcolor>0.105882 0.823529 0.180392</rgbcolor>
+  </point>
+  <point>
+    <position>0.529289</position>
+    <rgbcolor>0.239216 0.854902 0.388235</rgbcolor>
+  </point>
+  <point>
+    <position>0.598326</position>
+    <rgbcolor>0.313726 0.972549 0.439216</rgbcolor>
+  </point>
+  <point>
+    <position>0.694561</position>
+    <rgbcolor>0.352941 0.807843 0.800000</rgbcolor>
+  </point>
+  <point>
+    <position>0.755230</position>
+    <rgbcolor>0.282353 0.654902 0.796078</rgbcolor>
+  </point>
+  <point>
+    <position>0.815900</position>
+    <rgbcolor>0.172549 0.490196 0.803922</rgbcolor>
+  </point>
+  <point>
+    <position>0.857741</position>
+    <rgbcolor>0.0313726 0.462745 0.901961</rgbcolor>
+  </point>
+  <point>
+    <position>1.00000</position>
+    <rgbcolor>0.0627451 0.760784 0.807843</rgbcolor>
+  </point>
+</gradient>

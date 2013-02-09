@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="JFractus">
+	<property name="junit.output.dir" value="junit"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="target" value="1.6"/>
+	<property name="source" value="1.6"/>
+	<property name="jarfile" value="JFractus.jar"/>
+	<property name="apijarfile" value="JFractus-API.jar"/>
+	<property name="compiler" value="modern"/>
+	<property name="hamcrest.path" value="/usr/share/hamcrest-core/lib/hamcrest-core.jar"/>
+	<property name="junit4.path" value="/usr/share/junit-4/lib/junit.jar"/>
+	<property name="commons-cli.path" value="/usr/share/commons-cli-1/lib/commons-cli.jar"/>
+	<path id="junit4.library.classpath">
+		<pathelement location="${junit4.path}"/>
+	</path>
+	<path id="hamcrest.library.classpath">
+		<pathelement location="${hamcrest.path}"/>
+	</path>
+	<path id="commons-cli.library.classpath">
+		<pathelement location="${commons-cli.path}"/>
+	</path>
+	<path id="JFractus.classpath">
+		<pathelement location="bin"/>
+		<path refid="junit4.library.classpath"/>
+		<path refid="hamcrest.library.classpath"/>
+		<path refid="commons-cli.library.classpath"/>
+	</path>
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="bin"/>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src" excludes="**/*.launch, **/*.java"/>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="bin"/>
+	</target>
+	<target depends="init" name="build">
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<javac compiler="${compiler}" debug="true" debuglevel="${debuglevel}" destdir="bin"
+			source="${source}" target="${target}">
+			<src path="src"/>
+			<classpath refid="JFractus.classpath"/>
+		</javac>
+	</target>
+	<target name="junit.init">
+		<mkdir dir="${junit.output.dir}"/>
+	</target>
+	<target depends="junit.init,build" name="Vector2DTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.math.test.Vector2DTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="Vector3DTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.math.test.Vector3DTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="ComplexTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.math.test.ComplexTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="Matrix3DTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.math.test.Matrix3DTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="FractalAnimationTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.FractalAnimationTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="FractalDocumentTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.FractalDocumentTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="FractalFrameTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.FractalFrameTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="FractalKeyFrameTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.FractalKeyFrameTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="GradientTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.GradientTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="GradientLocatorTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.GradientLocatorTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="RGBColorTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.RGBColorTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="FunctionDOMHandlerTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.FunctionDOMHandlerTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="CopyFunctionTest">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.CopyFunctionTest" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="math.test">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.math.test.MathTestSuite" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target depends="junit.init,build" name="app.test">
+		<junit fork="yes" printsummary="withOutAndErr">
+			<formatter type="xml"/>
+			<test name="jfractus.app.test.ApplicationTestSuite" todir="${junit.output.dir}"/>
+			<jvmarg line="-ea"/>
+			<classpath refid="JFractus.classpath"/>
+		</junit>
+	</target>
+	<target name="unjar-required-libs">
+		<unjar src="${commons-cli.path}" dest="bin/"/>
+	</target>
+	<target depends="build,unjar-required-libs" name="jar">
+		<jar destfile="${jarfile}" compress="true">
+			<manifest>
+				<attribute name="Build-By" value="${user.name}"/>
+				<attribute name="Main-Class" value="jfractus.app.Main"/>
+			</manifest>
+			<fileset dir="bin" excludes="**/test,**/test/*"/>
+		</jar>
+	</target>
+	<target depends="build" name="api-jar">
+		<jar destfile="${apijarfile}" compress="true">
+			<manifest>
+				<attribute name="Build-By" value="${user.name}"/>
+			</manifest>
+			<fileset dir="bin">
+				<include name="jfractus/dom/*"/>
+				<include name="jfractus/math/*"/>
+				<include name="jfractus/generic/*"/>
+				<include name="jfractus/api/*"/>
+				<include name="jfractus/resources/*"/>
+				<exclude name="**/test"/>
+				<exclude name="**/test/*"/>
+			</fileset>
+		</jar>
+	</target>
+	<target name="JFractusMain">
+		<java classname="jfractus.app.Main" failonerror="true" fork="yes">
+			<classpath refid="JFractus.classpath"/>
+		</java>
+	</target>
+	<target depends="math.test,app.test" name="test"/>
+</project>
